@@ -1,0 +1,29 @@
+from Monoalphabetic.CaesarShiftOC import caesarShift
+from Monoalphabetic.MultiplicativeCipher import multiplicativeCipher
+
+
+def tester():
+    """A small function to test the outputs of the methods in this file.
+    """
+cipher="Multiplicative"
+plain = input ("Enter the message to be encrypted: ")
+key = input ("Enter the Key: ")
+key = int (key)
+
+if cipher == "caesar":
+
+    ciphertxt = caesarShift (plain, key)
+    print ("Cipher Text :", ciphertxt)
+    print ("########    The decryption Process  ############")
+    print ("Plain  Text :", caesarShift (ciphertxt, key, False))
+
+    # print ("########    Other Methods  ############")
+    # print ("Cipher Text :", caesarShiftStringOps (plain, key))
+    # print ("Plain  Text :", caesarShiftStringOps (ciphertxt, key, False))
+elif cipher == "Multiplicative":
+    # print (multiplicativeCipher ("This is a test message", 5))
+    ciphertxt = multiplicativeCipher (plain, key)
+    print ("Cipher Text :", ciphertxt)
+    print ("########    The decryption Process  ############")
+    print ("Plain  Text :", multiplicativeCipher (ciphertxt, key, False))
+############################################
